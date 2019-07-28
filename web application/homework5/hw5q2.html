@@ -1,0 +1,124 @@
+<HEAD>
+  <TITLE>JavaScript is Javalicious</TITLE>
+</HEAD>
+
+<BODY>
+<H3>This web site will find the volume for a Cylinder, Sphere or Cone</H3>
+
+<SCRIPT TYPE="text/javascript">
+  function getVolume()
+  {
+  var objs=document.getElementById("shape");
+  var opt_shape=objs.options[objs.selectedIndex].value;
+  if(opt_shape=='Cylinder'){
+    cylinderVolume();
+  }
+  if(opt_shape=='Sphere'){
+    sphereVolume();
+  }
+  if(opt_shape=='Cone'){
+    coneVolume();
+  }
+  }
+ </SCRIPT> 
+ <SCRIPT> 
+  function cylinderVolume(){
+  var radius=form1.radius.value;
+  var height=form1.height.value;
+  var volume=Math.PI*radius*radius*height;
+  form1.volume.value=volume;
+  }
+ </SCRIPT> 
+<SCRIPT> 
+  function sphereVolume(){
+  var radius=form1.radius.value;
+  var volume=4/3*Math.PI*radius*radius*radius;
+  form1.volume.value=volume;
+  }
+ </SCRIPT>   
+
+ <SCRIPT>
+  function coneVolume(){
+  var radius=form1.radius.value;
+  var height=form1.height.value;
+  var volume=1/3*Math.PI*radius*radius*height;
+  form1.volume.value=volume;  
+  }  
+</SCRIPT>
+<SCRIPT>
+  var r123=form1.radius.value;
+  function setTable(){
+  table1.shape.value=shape.shape.value
+  table1.r.value=form1.radius.value;
+  table1.h.value=form1.height.value;
+  table1.v.value=form1.volume.value;
+    if(units.units.value=="English"){
+    table1.unit_r.value="(ft)"
+    table1.unit_h.value="(ft)"
+    table1.unit_v.value="(ft^3)"
+    }
+    else{
+	table1.unit_r.value="(m)"
+    table1.unit_h.value="(m)"
+    table1.unit_v.value="(m^3)"
+    }
+  }
+</SCRIPT>
+<FORM NAME="units">
+  Select the units(English or SI)<BR>
+  <INPUT TYPE="radio" name="units" value="English">English
+  <INPUT TYPE="radio" name="units" value="SI">SI
+</FORM>
+
+<FORM NAME="shape">
+Select the shape
+<SELECT ID="shape" NAME="shape">
+  <option value="Cylinder">Cylinder</option>
+  <option value="Sphere">Sphere</option>
+  <option value="Cone">Cone</option>
+</SELECT>
+</FORM>
+
+<FORM NAME="form1">
+  Please Enter Your radius:
+  <INPUT TYPE=TEXT ID=radius NAME="radius" /><BR>
+  For the cylinder and cone,Enter the height:
+  <INPUT TYPE=TEXT ID=height NAME="height" /><BR>
+  volume:<INPUT TYPE=TEXT NAME="volume" />
+  
+  <INPUT TYPE=BUTTON
+  VALUE="calculate"
+  onClick="getVolume()">
+</FORM>
+
+<FORM NAME="table1">
+<table border="1">
+<tr>
+<th>Shape</th>
+<th>Radius</th>
+<th>Height</th>
+<th>Volume</th>
+</tr>
+  <td></td>
+  <td><INPUT TYPE=TEXT ID=unit_r NAME="unit_r" /></td>
+  <td><INPUT TYPE=TEXT ID=unit_h NAME="unit_h" /></td>
+  <td><INPUT TYPE=TEXT ID=unit_v NAME="unit_v" /></td>
+<tr>
+<td><INPUT TYPE=TEXT ID=shape NAME="shape" /></td>
+<td><INPUT TYPE=TEXT ID=r NAME="r" /></td>
+<td><INPUT TYPE=TEXT ID=h NAME="h" /></td>
+<td><INPUT TYPE=TEXT ID=v NAME="v" /></td>
+</table>
+
+<INPUT TYPE=BUTTON 
+  VALUE="Click to calculate the results" onClick="setTable()">
+</FORM>
+
+<div id="div1">
+</div>
+
+
+
+  <HR>
+</BODY>
+

@@ -1,0 +1,10 @@
+﻿  homework10.cpp
+c:\users\zhou\source\repos\homework10\homework10\linkedlist.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Node.cpp
+c:\users\zhou\source\repos\homework10\homework10\linkedlist.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  LinkedList.cpp
+c:\users\zhou\source\repos\homework10\homework10\linkedlist.h(7): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+c:\users\zhou\source\repos\homework10\homework10\linkedlist.cpp(94): warning C4101: 'tempPtr': unreferenced local variable
+c:\users\zhou\source\repos\homework10\homework10\linkedlist.cpp(146): warning C4101: 'tempPtr': unreferenced local variable
+  Generating Code...
+  homework10.vcxproj -> C:\Users\zhou\source\repos\homework10\Debug\homework10.exe
